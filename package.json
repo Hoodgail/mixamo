@@ -1,0 +1,102 @@
+{
+  "name": "mixamo-api",
+  "version": "1.0.0",
+  "description": "Complete Mixamo API SDK and Server - Reverse engineered Three.js compatible animation library and high-performance API server",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "mixamo-server": "dist/api/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "prepublishOnly": "npm run build",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "example": "ts-node examples/basic-usage.ts",
+    "example:api": "ts-node api/examples/client.ts",
+    "dev": "ts-node src/index.ts",
+    "server": "bun api/index.ts",
+    "server:dev": "bun --hot api/index.ts",
+    "server:test": "bash api/test.sh",
+    "demo": "ts-node examples/api-demo.ts"
+  },
+  "keywords": [
+    "mixamo",
+    "3d",
+    "animation",
+    "threejs",
+    "three.js",
+    "rigging",
+    "character",
+    "fbx",
+    "glb",
+    "gltf",
+    "api",
+    "server",
+    "bun",
+    "sdk",
+    "reverse-engineering",
+    "motion-capture",
+    "skeletal-animation"
+  ],
+  "author": {
+    "name": "Mixamo API Community",
+    "email": "community@mixamo-api.dev"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mixamo-community/mixamo-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mixamo-community/mixamo-api/issues"
+  },
+  "homepage": "https://github.com/mixamo-community/mixamo-api#readme",
+  "engines": {
+    "node": ">=16.0.0",
+    "bun": ">=1.0.0"
+  },
+  "files": [
+    "dist/**/*",
+    "api/**/*",
+    "examples/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "axios": "^1.10.0",
+    "form-data": "^4.0.0",
+    "mime-types": "^2.1.35",
+    "three": "^0.177.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "@types/three": "^0.177.0",
+    "@types/jest": "^29.5.8",
+    "@types/mime-types": "^2.1.4",
+    "typescript": "^5.3.3",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.2",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "bun": ">=1.0.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./server": {
+      "import": "./api/index.ts",
+      "require": "./api/index.ts"
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
